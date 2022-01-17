@@ -37,6 +37,8 @@ router.get('/:id', (req, res) => {
 
 // create new product
 router.post('/', (req, res) => {
+  
+
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -111,6 +113,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy
 });
 
 module.exports = router;
