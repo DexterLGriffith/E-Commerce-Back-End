@@ -8,8 +8,43 @@ This back-end focused E-commerce applicaiton is a prebuilt application which use
 
 ## Tasks Completed
 
+1. Created basic file from Github with readme.md, license and initial starting files. 
+2. Created product.js model page, and category.js models page.
+3. Created productTag.js and Tag.js model pages. 
+4. Created Index.js models file to link all model pages. 
+5. Created api routes, and finalized the "findAll" functions for each file [category, product and tag] to post in insomnia.
 
+    Example: 
 
+        Product.findAll({
+            include: [{
+            model: Category}, {model: Tag, through: ProductTag}
+            ]
+        })
+6. Added findOne routes for all the different files. 
+
+    Example: 
+
+        Category.findOne({
+            where: {id:req.params.id}, 
+            include: [{
+            model: Product,}
+            ]
+        })
+7. Added the Create new routes for all different routes. 
+
+    Example: 
+
+        router.post('/', (req, res) => {
+            Category.create(req.body)
+            .then((result) => res.status(200).json(result))
+            .catch(err =>{console.log(err)
+            res.status(500).json(err)
+            })
+        });
+8. Tested mysql application for proper functionality. 
+9. Made sure all programs interact as they are intended to, and that there werent any major problems which caused the application to crash. 
+10. After ensuring propfessional quality, it was uploaded to Github. 
 
 ## Installation 
 
